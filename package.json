@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "birdnest",
+  "workspaces": [
+    "client",
+    "api"
+  ],
+  "version": "1.0.0",
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "client": "yarn workspace client start",
+    "server": "yarn workspace api start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0"
+  }
+}
