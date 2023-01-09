@@ -1,5 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const fetchDroneData = require('./fetch_drone_data.js')
+
+let violatorsList = [];
+
+setInterval(async function () {
+  violatorsList = await fetchDroneData();
+  console.log(violatorsList);
+}, 2000);
 
 const PORT = process.env.PORT || 3001;
 
@@ -7,7 +15,7 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send({violatorsList: ["drone1", "drone2"]});
+  //res.send({violatorsList: violatorsList});
 })
 
 app.listen(PORT, () => {
