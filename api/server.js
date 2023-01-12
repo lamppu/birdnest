@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const fetchDroneData = require('./fetch_drone_data.js')
+const fetchViolators = require('./controllers/fetch_violators.js');
 
 let violatorsList = [];
 
 setInterval(async function () {
-  violatorsList = await fetchDroneData();
-  console.log(violatorsList);
+  violatorsList = await fetchViolators(violatorsList);
+  //console.log(violatorsList);
 }, 2000);
 
 const PORT = process.env.PORT || 3001;
