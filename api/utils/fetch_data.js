@@ -1,14 +1,19 @@
 const parser = require('xml-js');
 
-const fetchData = async (url) => {
+const fetchData = async (url, mode) => {
     try {
         const response = await fetch(url);
+        
         let data = null;
         if(response.status === 200) {
-            const xmlData = await response.text();
-    
-            const options = {compact: true};
-            data = parser.xml2js(xmlData, options);
+            const resData = await response.text();
+
+            if(mode === "XML") {
+                const options = {compact: true};
+                data = parser.xml2js(resData, options);
+            } else if (mode === "JSON") {
+                data = JSON.parse(resData);
+            }
         }
         return {
             status: response.status,
