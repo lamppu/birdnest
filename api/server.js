@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const fetchViolators = require('./controllers/fetch_violators.js');
+const updateViolatorsMap = require('./controllers/update_violators_map.js');
 
-let violatorsList = [];
+let violatorsMap = new Map();
+let unsuccessfulFetchArr = []
 
 setInterval(async function () {
-  violatorsList = await fetchViolators(violatorsList);
-  //console.log(violatorsList);
+  await updateViolatorsMap(violatorsMap, unsuccessfulFetchArr);
 }, 2000);
 
 const PORT = process.env.PORT || 3001;
@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  //res.send({violatorsList: violatorsList});
+  res.send({data: {violatorsMap: [...violatorsMap]}});
 })
 
 app.listen(PORT, () => {
