@@ -10,7 +10,10 @@
   "scripts": {
     "client": "yarn workspace client start",
     "server": "yarn workspace api start",
-    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "test-server": "yarn workspace api run test",
+    "test-client": "NODE_OPTIONS=--experimental-vm-modules yarn workspace client run test",
+    "test": "yarn test-server && yarn test-client"
   },
   "dependencies": {
     "concurrently": "^7.6.0"
