@@ -24,9 +24,9 @@ const mapDrone = (drone) => {
 // returns list with serialNumber and distance
 const catchViolators = (droneList) => {
     const mappedDrones = droneList.map(mapDrone);
-    console.log(mappedDrones);
+    
     const filteredDrones = mappedDrones.filter(inNDZ);
-    console.log(filteredDrones);
+    
     return filteredDrones;
 }
 
