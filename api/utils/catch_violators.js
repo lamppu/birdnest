@@ -7,25 +7,36 @@ const calculateDistance = (positionX, positionY) => {
     return distance;
 }
 
-const inNDZ = (drone) => {
-    if (drone.distance <= 100000) {
-        return true;
+const inNDZ = (distance) => {
+    if (distance <= 100000) {
+        return "in";
     }
-    return false;
+    return "out";
 }
 
 const mapDrone = (drone) => {
+    const distance = calculateDistance(drone.positionX._text, drone.positionY._text);
+    
     return {
         serialNumber: drone.serialNumber._text,
-        distance: calculateDistance(drone.positionX._text, drone.positionY._text)
+        distance: distance,
+        inNDZ: inNDZ(distance)
     }
 }
 
 // returns list with serialNumber and distance
-const catchViolators = (droneList) => {
+const catchViolators = (droneList, violatorsMap) => {
+
+    const filterDrones = (drone) => {
+        if(drone.inNDZ === "in" || violatorsMap.has(drone.serialNumber)) {
+            return true;
+        }
+        return false;
+    }
+
     const mappedDrones = droneList.map(mapDrone);
     
-    const filteredDrones = mappedDrones.filter(inNDZ);
+    const filteredDrones = mappedDrones.filter(filterDrones);
     
     return filteredDrones;
 }
