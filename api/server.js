@@ -15,7 +15,19 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send({data: {violatorsMap: [...violatorsMap]}});
+})
+
+
+app.get('/stream', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader("Cache-Control", "no-cache");
+  res.setHeader("connection", "keep-alive");
+  res.setHeader("Content-Type", "text/event-stream");
+
+  setInterval(() => {
+    const data = JSON.stringify({violatorsArray: Array.from(violatorsMap.values())});
+    res.write("data: " + data + "\n\n");
+  }, 2000);
 })
 
 app.listen(PORT, () => {
