@@ -17,7 +17,6 @@ app.use(cors());
 app.get('/', (req, res) => {
 })
 
-
 app.get('/stream', (req, res) => {
   res.statusCode = 200;
   res.setHeader("Cache-Control", "no-cache");
