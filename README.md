@@ -17,7 +17,7 @@ The server is running on: https://birdnest-hyl2.onrender.com/
 
 ## To-do
 With this project, I felt like I fell a little short on time, so here is what I would improve:
-- write thorough tests
-- make the app more scalable by returning the list of table headers also from the server, so it would be easy to add information to the table if needed
-- currently I am making changes to the same Map on the server in multiple different modules, so there is quite some room for error, so I would need to research what would be a better way of moving the data around
+- [ ] write thorough tests
+- [ ] make the app more scalable by returning the list of table headers also from the server, so it would be easy to add information to the table if needed
+- [ ] currently I am making changes to the same Map on the server in multiple different modules, so there is quite some room for error, so I would need to research what would be a better way of moving the data around
 
