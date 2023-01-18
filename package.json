@@ -8,6 +8,7 @@
   "version": "1.0.0",
   "packageManager": "yarn@3.3.1",
   "scripts": {
+    "build-client": "yarn workspace client build",
     "client": "yarn workspace client start",
     "server": "yarn workspace api start",
     "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
