@@ -13,9 +13,9 @@ const getTestMap = () => {
     const ts2 = (new Date(now - 500000)).toISOString();
     const ts3 = (new Date(now - 1000)).toISOString();
 
-    const viol1 = new Violator(pilot1, 46333.9707902, ts1);
-    const viol2 = new Violator(pilot2, 46333.9707902, ts2);
-    const viol3 = new Violator(pilot3, 46333.9707902, ts3);
+    const viol1 = new Violator(pilot1, "out", 46333.9707902, ts1);
+    const viol2 = new Violator(pilot2, "out", 46333.9707902, ts2);
+    const viol3 = new Violator(pilot3, "in", 46333.9707902, ts3);
     
     violatorsMap.set("1", viol1);
     violatorsMap.set("2", viol2);
