@@ -1,4 +1,5 @@
 const parser = require('xml-js');
+const fetch = require('cross-fetch');
 
 const fetchData = async (url, mode) => {
     try {
