@@ -1,1 +1,1 @@
-require("./suites/api.js");
+require("./suites/utils_tests.js");
