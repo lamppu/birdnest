@@ -26,7 +26,7 @@ const addViolators = async (violatorsMap, caughtViolators, timeStamp, unsuccessf
                 unsuccessfulFetchArr.push(violator.serialNumber);
             }
             
-            violatorsMap.set(violator.serialNumber, new Violator(pilot, violator.inNDZ, violator.distance, timeStamp));
+            violatorsMap.set(violator.serialNumber, new Violator(pilotData.pilot, violator.inNDZ, violator.distance, timeStamp));
 
         }
     });
