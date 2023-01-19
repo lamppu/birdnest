@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState("");
 
   useEffect(() => {  
-    const sse = new EventSource('https://birdnest-hyl2.onrender.com/stream');  
+    const sse = new EventSource('https://birdnest-hyl2.onrender.com/');  
     
     sse.onmessage = e => setData(JSON.parse(e.data));  
     sse.onerror = () => {
