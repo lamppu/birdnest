@@ -4374,6 +4374,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.4.0
     "@testing-library/user-event": ^13.5.0
+    eventsourcemock: ^2.0.0
     react: ^18.2.0
     react-dom: ^18.2.0
     react-scripts: 5.0.1
@@ -6141,6 +6142,13 @@ __metadata:
   version: 3.3.0
   resolution: "events@npm:3.3.0"
   checksum: f6f487ad2198aa41d878fa31452f1a3c00958f46e9019286ff4787c84aac329332ab45c9cdc8c445928fc6d7ded294b9e005a7fce9426488518017831b272780
+  languageName: node
+  linkType: hard
+
+"eventsourcemock@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "eventsourcemock@npm:2.0.0"
+  checksum: e8de1235307a2a7c958657de1d0f1fa34d3f9c0e494b6880a2b25b1096b9fa32439a667eee611ffda008ca7d8ee7ca1d83a9b12eeb9c4fa264db7554117fd49f
   languageName: node
   linkType: hard
 
