@@ -18,7 +18,7 @@ const DataTable = ({data}) => {
       }
 
       rows.push(
-        <Table.Row key = {i} negative>
+        <Table.Row key = {i}>
           <Table.Cell>{name}</Table.Cell>
           <Table.Cell>{email}</Table.Cell>
           <Table.Cell>{phone}</Table.Cell>
