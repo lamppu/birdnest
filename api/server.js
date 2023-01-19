@@ -3,7 +3,7 @@ const cors = require('cors');
 const updateViolatorsMap = require('./controllers/update_violators_map.js');
 
 let violatorsMap = new Map();
-let unsuccessfulFetchArr = []
+let unsuccessfulFetchArr = [];
 
 setInterval(async function () {
   await updateViolatorsMap(violatorsMap, unsuccessfulFetchArr);
@@ -15,9 +15,6 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-})
-
-app.get('/stream', (req, res) => {
   res.statusCode = 200;
   res.setHeader("Cache-Control", "no-cache");
   res.setHeader("connection", "keep-alive");
